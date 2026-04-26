@@ -1,0 +1,50 @@
+# Go to project folder
+cd C:\Users\savitby2001\git\OMS-Test
+
+# Check current status
+git status
+
+# Add all changes
+git add .
+
+# Commit changes
+git commit -m "updated application changes"
+
+# Push code to GitHub
+git push origin master
+
+# Pull latest code (team sync)
+git pull origin master
+
+-------------------------------------------------
+
+# Maven build commands (used in Jenkins)
+
+# Clean and build project
+mvn clean install
+
+# Run tests
+mvn test
+
+# Clean + test execution
+mvn clean test
+
+-------------------------------------------------
+
+# CI/CD Flow
+
+Developer changes code
+        ↓
+git add → git commit → git push
+        ↓
+GitHub repository updated
+        ↓
+Jenkins detects change (Poll SCM / Webhook)
+        ↓
+mvn clean test runs
+        ↓
+Automation tests executed
+        ↓
+Report generated (PASS / FAIL)
+        ↓
+Build status shown in Jenkins
