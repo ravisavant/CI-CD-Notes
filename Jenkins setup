@@ -1,0 +1,100 @@
+# 1. Install Jenkins
+Download: https://www.jenkins.io/download/
+Install and start Jenkins service
+Open: http://localhost:8080
+
+-------------------------------------------------
+
+# 2. Unlock Jenkins
+Get password from:
+C:\ProgramData\Jenkins\.jenkins\secrets\initialAdminPassword
+
+-------------------------------------------------
+
+# 3. Install Plugins
+Install recommended plugins:
+- Git plugin
+- Maven plugin
+- Pipeline plugin
+
+-------------------------------------------------
+
+# 4. Configure Tools
+Manage Jenkins → Tools:
+- JDK path
+- Maven path
+- Git installation
+
+-------------------------------------------------
+
+# 5. Create Job
+New Item → Freestyle project
+
+-------------------------------------------------
+
+# 6. Git Configuration
+Source Code Management → Git:
+Repo URL:
+https://github.com/ravisavant/OMS-Test.git
+
+Branch:
+*/master
+
+-------------------------------------------------
+
+# 7. Build Trigger
+Select:
+☑ Poll SCM
+Schedule:
+* * * * *
+
+OR use Webhook for instant trigger
+
+-------------------------------------------------
+
+# 8. Build Steps
+Add build step → Execute Windows batch command:
+
+mvn clean test
+
+-------------------------------------------------
+
+# 9. Save Job
+Click Save
+
+-------------------------------------------------
+
+# 10. Run Build
+
+Option A:
+Click "Build Now"
+
+Option B:
+Push code to GitHub:
+git add .
+git commit -m "test jenkins"
+git push origin master
+
+-------------------------------------------------
+
+# 11. Jenkins Flow
+
+GitHub push
+      ↓
+Jenkins detects change
+      ↓
+Maven build runs
+      ↓
+Automation tests execute
+      ↓
+Report generated
+      ↓
+PASS / FAIL result shown
+
+-------------------------------------------------
+
+# Links
+
+Jenkins: https://www.jenkins.io/
+GitHub Repo: https://github.com/ravisavant/OMS-Test.git
+Local UI (optional): http://localhost:5500/
