@@ -1,0 +1,32 @@
+# Go to project folder
+cd C:\Users\savitby2001\git\OMS-Test
+
+# Check changes
+git status
+
+# Add only one file (example)
+git add OMSWebApplication.html
+
+# Commit change
+git commit -m "updated only one file"
+
+# Push to GitHub
+git push origin master
+
+-------------------------------------------------
+
+# CI/CD Flow
+
+Edit file in VS Code
+        ↓
+git add single file
+        ↓
+git commit
+        ↓
+git push
+        ↓
+GitHub updated
+        ↓
+Jenkins detects change
+        ↓
+Build + tests run automatically
